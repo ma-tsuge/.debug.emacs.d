@@ -70,7 +70,7 @@
   ;; proxy 関連の設定
 
   (setq my-net-uid "S023784")
-  (setq my-net-passwd "Mhaisrao1f")
+  (setq my-net-passwd "**********")
   (setq my-proxy-host "strings-oswest-lb10.kddi.com")
   (setq my-proxy-port 8080)
 
