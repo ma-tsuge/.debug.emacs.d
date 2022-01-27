@@ -42,7 +42,7 @@
 ;  (add-subdirs-to-load-path (locate-user-emacs-file "./site-lisp"))
   ;; (add-subdirs-to-load-path
   ;;  (expand-file-name(concat data-directory "../../site-lisp")))
-  (add-subdirs-to-load-path "d:/S023784/gccemacs/share/emacs/site-lisp")
+  (add-subdirs-to-load-path "d:/*******/gccemacs/share/emacs/site-lisp")
 )
 
 (eval-and-compile
@@ -69,9 +69,9 @@
 
   ;; proxy 関連の設定
 
-  (setq my-net-uid "S023784")
+  (setq my-net-uid "*******")
   (setq my-net-passwd "**********")
-  (setq my-proxy-host "strings-oswest-lb10.kddi.com")
+  (setq my-proxy-host "****************************")
   (setq my-proxy-port 8080)
 
   (setenv "http_proxy"
@@ -86,13 +86,13 @@
 (eval-and-compile
   (customize-set-variable
    'url-proxy-services
-   (list '("no_proxy" . "^\\(127.0.0.1\\|localhost\\|10.*\\|172.22.164.88\\|*.kddi.com\\|clarinet\\|kidsland\\|manabi.sabacloud.com\\|outlook.office365.com\\)")
+   (list '("no_proxy" . "^\\(****\\|****\\)")
 	 (cons "http"   (format "%s:%d" my-proxy-host my-proxy-port))
 	 (cons  "https" (format "%s:%d" my-proxy-host my-proxy-port))))
 
 (customize-set-variable
  'request-curl-options
- '("--trace-ascii" "c:/Users/S023784/AppData/Local/Temp/curl-trace"
+ '("--trace-ascii" "c:/Users/*******/AppData/Local/Temp/curl-trace"
    "--noproxy" "127.0.0.1"))
 
   (customize-set-variable
@@ -105,7 +105,7 @@
 
 (eval-and-compile
   (customize-set-variable
-   'package-user-dir "d:/S023784/gccemacs/share/emacs/site-lisp/elpa")
+   'package-user-dir "d:/*******/gccemacs/share/emacs/site-lisp/elpa")
 
   (customize-set-variable
    'package-archives '(("gnu"   . "https://elpa.gnu.org/packages/")
@@ -248,15 +248,15 @@
     (cond
      ((string= my-sys "cygwin")
       (setq my-path
-	    '("D:/S023784/home/.rbenv/bin"
-	      "D:/S023784/home/bin"
+	    '("D:/*******/home/.rbenv/bin"
+	      "D:/*******/home/bin"
 	      "D:/cygwin/usr/local/bin"
 	      "D:/cygwin/bin"
-	      "D:/S023784/gccemacs/bin"
+	      "D:/*******/gccemacs/bin"
 	      )))
      ((string= my-sys "mingw32")
       (setq my-path 
-	    '("D:/S023784/gccemacs/bin"
+	    '("D:/*******/gccemacs/bin"
 	      "d:/msys32/usr/local/bin"
 	      "D:/msys32/mingw32/bin"
 	      "d:/msys32/usr/bin"
@@ -267,8 +267,8 @@
      ((string= my-sys "mingw64")
       (setq my-path
 	    `(
-              ;; "D:/S023784/gccemacs/home/py-win/Scripts"
-              "d:/S023784/gccemacs/home/py-3_9/Scripts"
+              ;; "D:/*******/gccemacs/home/py-win/Scripts"
+              "d:/*******/gccemacs/home/py-3_9/Scripts"
               ,(cond ((string= py-ver "3.6")
                       "d:/msys32/mingw64/opt/python/3.6")
                      ((string= py-ver "3.9")
@@ -278,17 +278,17 @@
 	      "d:/msys32/mingw64/opt/texinfo/6.8/bin"
 	      "d:/msys32/mingw64/local/bin"
 	      "d:/msys32/mingw64/bin"
-	      "d:/S023784/home/.cargo/bin"
+	      "d:/*******/home/.cargo/bin"
 	      "d:/msys32/usr/local/bin"
 	      "d:/msys32/usr/bin"
 	      "d:/msys32/usr/bin/site_perl"
 	      "d:/msys32/usr/bin/vendor_perl"
 	      "d:/msys32/usr/bin/core_perl"
               ,(cond ((string= emacs-version "28.0.90")
-	              "d:/S023784/emacs-28.0.90/bin")
+	              "d:/*******/emacs-28.0.90/bin")
                      ((string= emacs-version "29.0.50")
-                      "d;/S023784/emacs-29/bin"))
-              "d:/S023784/gccemacs/bin"
+                      "d;/*******/emacs-29/bin"))
+              "d:/*******/gccemacs/bin"
               "d:/nodejs"
 	      ))))
 
@@ -298,9 +298,9 @@
     (setenv "LANG" "C")
     (setenv "RUBY_BUILD_HTTP_CLIENT" "wget")
     (setenv "PAGER" "cat")
-    (setenv "CARGO_HOME" "D:\\S023784\\home\\.cargo")
+    (setenv "CARGO_HOME" "D:\\*******\\home\\.cargo")
     (setenv "CARGO_INSTALL_ROOT" "d:\\msys32\\mingw64\\local")
-    (setenv "RUSTUP_HOME" "D:\\S023784\\home\\.rustup")
+    (setenv "RUSTUP_HOME" "D:\\*******\\home\\.rustup")
 
     ;; ;;; shell の設定
 
@@ -333,7 +333,7 @@
     (doc-view-pdf->png-converter-function . #'doc-view-pdf->png-converter-ghostscript)
     (doc-view-dvipdf-program . "/mingw64/bin/dvipdf")
     (doc-view-ps2pdf-program . "/mingw64/bin/ps2pdf")
-    (doc-view-pdftotext-program . "/d/s023784/gccemacs/bin/pdftotext")
+    (doc-view-pdftotext-program . "/d/*******/gccemacs/bin/pdftotext")
     )))
 ;;;===================================
 ;;; とりあえず init_tmp.el の残りの部分を貼り付けた
@@ -582,7 +582,7 @@
     (global-set-key "\C-xM" 'browse-url-default-at-point)
 
     (setq Info-default-directory-list
-          '( "d:/S023784/gccemacs/share/info"
+          '( "d:/*******/gccemacs/share/info"
 	     "d:/cygwin/usr/local/info"
 	     "d:/cygwin/usr/share/info"))
 
@@ -787,7 +787,7 @@ Value is t if a query was formerly required."
       ;;  (migemo-options          . '("-S" "migemo" "-t" "emacs" "-i" "\a"))
       ;;  (migemo-command          . "ruby")
       (migemo-coding-system    . 'utf-8-unix)
-      (migemo-dictionary       . "d:/S023784/gccemacs/share/migemo/utf-8/migemo-dict"))
+      (migemo-dictionary       . "d:/*******/gccemacs/share/migemo/utf-8/migemo-dict"))
     :config
     (migemo-init)
     ))
@@ -1094,13 +1094,13 @@ Value is t if a query was formerly required."
 (eval-and-compile
   (leaf *my:env12
     :config
-    ;; (defvar draft-dir "//FSVAQUA02/private/S023784/課題一覧/日報/")
-    (defvar draft-dir "C:/Users/S023784/OneDrive - KDDI株式会社/daily/")
+    ;; (defvar draft-dir "//FSVAQUA02/private/*******/課題一覧/日報/")
+    (defvar draft-dir "C:/Users/*******/OneDrive/daily/")
     (defvar draft-start-day 1)
     ;; (decode-time)
     ;;                                  1    2   3     4    5   6
     ;; Decode a time value as (SEC MINUTE HOUR DAY MONTH YEAR DOW DST ZONE).
-    ;; (find-file "//Fsvcyan02/private/S023784/課題一覧/日報0901/drft090209.txt")
+    ;; (find-file "//Fsvcyan02/private/*******/課題一覧/日報0901/drft090209.txt")
     ;; day-of-week  0  1  2  3  4  5  6
     ;;             日 月 火 水 木 金 土
     (defun draft-file-string (&optional day-of-week prev-week specified-time)
@@ -1152,7 +1152,7 @@ Value is t if a query was formerly required."
         (find-file file)
         ))
     (draft-open-file)
-                                        ;(call-process "NET" nil " *NET USE*" nil "USE" "P:" "S023784")
+                                        ;(call-process "NET" nil " *NET USE*" nil "USE" "P:" "*******")
 
     (defun pr-me-ban-user-list ()
       (interactive)
@@ -1436,7 +1436,7 @@ and to highlight the date header in the fancy diary."
      (w3m-external-view-temp-directory . "~/../../home/.w3m")
      (w3m-profile-directory            . "~/../../home/.w3m")
      (w3m-use-ftp-proxy . t)
-     (w3m-home-page . "file:///cygdrive/d/S023784/home/.w3m/bookmark.html")
+     (w3m-home-page . "file:///cygdrive/d/*******/home/.w3m/bookmark.html")
      (w3m-dirlist-cgi-program
       . "/usr/libexec/w3m/cgi-bin/dirlist.cgi")
      (w3m-use-cookies . t)
@@ -2341,9 +2341,9 @@ and to highlight the date header in the fancy diary."
       (redraw-frame))
     :bind (("M-ESC ESC" . c/redraw-frame)
            ("\C-h\C-v" . apropos-variable))
-    :custom ((user-full-name . "Masahiro Tsuge") ; C soruce
-             (user-mail-address . "ma-tsuge@kddi.com") ; start up
-             (user-login-name . "S023784")             ; C source
+    :custom ((user-full-name . "********") ; C soruce
+             (user-mail-address . "********") ; start up
+             (user-login-name . "*******")             ; C source
              (create-lockfiles . nil)                  ; C source
              ;; (debug-on-error . t)                      ; C source
              (init-file-debug . t)                     ; start up
@@ -2374,9 +2374,9 @@ and to highlight the date header in the fancy diary."
              `(source-directory          ; C
                . 
                ,(cond ((string= emacs-version "28.0.90")
-	               "d:/S023784/home/src/emacs/28.0.90/emacs/")
+	               "d:/*******/home/src/emacs/28.0.90/emacs/")
                       ((string= emacs-version "29.0.50")
-                       "d:/S023784/home/src/emacs/28/native/emacs/")))
+                       "d:/*******/home/src/emacs/28/native/emacs/")))
              `(find-function-C-source-directory        ; find-func
                .
                ,(expand-file-name "src" source-directory))
